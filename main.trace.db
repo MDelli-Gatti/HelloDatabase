@@ -1,0 +1,30 @@
+2016-06-13 10:57:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "FLASE" not found; SQL statement:
+UPDATE players SET is_alive = FLASE where id = 1 [42122-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Update.prepare(Update.java:192)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1202)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2016-06-13 11:04:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAYERS" already exists; SQL statement:
+CREATE TABLE players (id IDENTITY, name VARCHAR, is_alive BOOLEAN, score INT, health DOUBLE) [42101-192]
+2016-06-13 11:20:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO PLAYERS VALUES (NULL, 'Charlie', TRUE, 0, 100 [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO players VALUES (NULL, 'Charlie', TRUE, 0, 100 [42001-192]
+2016-06-13 11:21:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO PLAYERS VALUES (NULL, 'Charlie', TRUE, 0, 100 [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO players VALUES (NULL, 'Charlie', TRUE, 0, 100 [42001-192]
